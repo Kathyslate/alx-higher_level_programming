@@ -3,5 +3,5 @@ def simple_delete(a_dictionary, key=""):
     if key in a_dictionary:
         a_dictionary.pop(key)
     else:
-        print(f"KeyError: '{key}' does not exist in the dictionary")
+        pass
     return a_dictionary
