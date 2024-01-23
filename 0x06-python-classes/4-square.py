@@ -6,25 +6,31 @@ class Square:
     """ class Square that defines a square"""
 
     def __init__(self, size=0):
-        """ init square
+        """Creates new instances of square.
 
         Args:
-            value (int): size of the square.
+            size: size of the square (1 side).
         """
-        self.size = size
+        self.__size = size
 
-    @property
-    def size(self):
-        """int: private size.
+
+    def area(self):
+        """returns the area.
 
         Returns:
-            Private size.
+            ares.
+        """
+        return self.__size * self.__size
+
+     @property
+    def size(self):
+        """Returns the size of a square
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-         """Property setter for size.
+        """Property setter for size.
 
         Args:
             value (int): size of a square (1 side).
@@ -33,17 +39,9 @@ class Square:
             TypeError: size must be an integer
             ValueError: size must be >= 0
         """
-        if type(value) is not int:
+        if type(size) is not int:
             raise TypeError('size must be an integer')
-        elif value < 0:
+        elif size < 0:
             raise ValueError('size must be >= 0')
         else:
-            self.__size = value  #: size of the square
-
-    def area(self):
-        """returns the area
-
-        Returns:
-            area.
-        """
-        return self.__size * self.__size
+            self.__size = size  #: size of the square
