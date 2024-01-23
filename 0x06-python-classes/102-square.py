@@ -43,19 +43,20 @@ class Square:
         """
         return self.__size * self.__size
 
-    def __lessthan__(self, other):
+    def __lt__(self, other):
         return self.size < other.size
 
-    def __lessequal__(self, other):
+    def __le__(self, other):
         return self.size <= other.size
 
-    def __equal__(self, other):
+    def __eq__(self, other):
         return self.size == other.size
 
-    def __notequal__(self, other):
+    def __ne__(self, other):
         return self.size != other.size
 
-    def __greatequal__(self, other):
+    def __ge__(self, other):
         return self.size >= other.size
-    def __greatthan__(self, other):
+
+    def __gt__(self, other):
         return self.size > other.size
