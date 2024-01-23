@@ -3,9 +3,9 @@ import sys
 
 def safe_function(fct, *args):
     try:
-        rest = fct(*args)
+        res = fct(*args)
     except BaseException as e:
-        rest = None
+        res = None
         print("Exception: {}".format(e), file=sys.stderr)
     finally:
-        return rest
+        return res
