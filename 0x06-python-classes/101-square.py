@@ -72,13 +72,12 @@ class Square:
             print("")
 
      def __str__(self):
-        """Prints square offsetting it by position with symbol #
-
-        Returns: The square.
-        """
-        if self.__size == 0:
-            return ''
-        new_lines = '\n' * self.position[1]
-        spaces = ' ' * self.position[0]
-        hashes = '#' * self.size
-        return new_lines + '\n'.join(spaces + hashes for e in range(self.size))
+        """Define the print() representation of a Square."""
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            if i != self.__size - 1:
+                print("")
+        return ("")
