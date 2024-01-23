@@ -3,8 +3,8 @@ import sys
 
 def safe_function(fct, *args):
     try:
-        result = fct(*args)
-        return result
+        rest = fct(*args)
+        return rest
     except BaseException as val:
         print("Exception: {}".format(val), file=sys.stderr)
         return None
