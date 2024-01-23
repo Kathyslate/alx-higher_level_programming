@@ -19,7 +19,6 @@ class MagicClass:
         Raises:
             TypeError: radius must be a number .
         """
-        def __init__(self, radius):
         if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
         self._MagicClass__radius = radius
