@@ -1,0 +1,72 @@
+The ``0-add_integer`` function module
+======================
+
+Using ``add_integer``
+-------------------
+
+Importing the function from the module:
+        >>> add_integer = __import__("0-add_integer").add_integer
+
+Checking for module docstring:
+         >>> m = __import__("0-add_integer").__doc__
+         >>> len(m) > 1
+         True
+
+Checking for function docstring:
+         >>> f = __import__("0-add_integer").add_integer.__doc__
+         >>> len(f) > 1
+         True
+
+Checking regular addition:
+         >>> add_integer(4, 6)
+         10
+
+Checking positive with negative:
+         >>> add_integer(6, -8)
+         -2
+
+Checking negative with positive:
+         >>> add_integer(-8, 12)
+	 4
+
+Checking float with int:
+         >>> add_integer(6.2, 4)
+         10
+
+Checking int with float:
+         >>> add_integer(5, 11.2)
+         16
+
+Checking both float:
+         >>> add_integer(3.21, 7.4)
+         10
+
+Checking non-number with number:
+         >>> add_integer("mercy", 2)
+         Traceback (most recent call last):
+         ...
+         TypeError: a must be an integer
+
+Checking number with non-number:
+         >>> add_integer(3, "jane")
+         Traceback (most recent call last):
+         ...
+         TypeError: b must be an integer
+
+
+Checking bool with number:
+         >>> add_integer("True", 1)
+         Traceback (most recent call last):
+         ...
+         TypeError: a must be an integer
+
+Checking number with bool:
+         >>> add_integer(0, "False")
+         Traceback (most recent call last):
+         ...
+         TypeError: b must be an integer
+
+
+Checking one arg:
+         >>> add_integer(1)
+	 99
