@@ -1,21 +1,28 @@
 #include <Python.h>
+#include <object.h>
+#include <unicodeobject.h>
 
-void print_python_string(PyObject *p) {
-    if (!PyUnicode_Check(p)) {
-        fprintf(stderr, ": Argument is not a string\n");
+void print_python_string(PyObject *p)
+{
+    const char *type = NULL;
+    Py_ssize_t len = 0;
+    wchar_t *str = NULL;
+
+    printf("[.] string object info\n");
+    if (!PyUnicode_Check(p))
+    {
+        printf("  [ERROR] Invalid String Object\n");
         return;
     }
 
-    Py_ssize_t length = PyUnicode_GetLength(p);
-    const Py_UNICODE *unicode = PyUnicode_AsUnicode(p);
+    if (PyUnicode_IS_COMPACT_ASCII(p))
+        type = "compact ascii";
+    else
+        type = "compact unicode object";
 
-    for (Py_ssize_t i = 0; i < length; ++i) {
-        if (unicode[i] < 32 || unicode[i] > 126) {
-            printf("\\u%04x", unicode[i]);
-        } else {
-            printf("%c", unicode[i]);
-        }
-    }
+    str = PyUnicode_AsWideCharString(p, &len);
 
-    printf("\n");
+    printf("  type: %s\n", type);
+    printf("  length: %ld\n", len);
+    printf("  value: %ls\n", str);
 }
