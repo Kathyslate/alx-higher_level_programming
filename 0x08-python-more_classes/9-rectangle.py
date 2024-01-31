@@ -4,7 +4,6 @@ Defining a class Rectangle
 """
 
 
-
 class Rectangle:
     """representing a rectangle"""
 
@@ -13,8 +12,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """initializing the rectangle"""
-        self._Rectangle_height = height
-        self._Rectangle_width = width
+        self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
     def area(self):
@@ -37,9 +36,10 @@ class Rectangle:
         """setting the attribute width of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("width must be >= 0")
-        self._Rectangle_width = value
+        else:
+            self._Rectangle_width = value
 
     @property
     def height(self):
@@ -51,16 +51,16 @@ class Rectangle:
         """setting the attribute width of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("height must be >= 0")
-        self._Rectangle_height = value
+        else:
+            self._Rectangle_height = value
 
     def __str__(self):
         """print the rectangle with the character #"""
         if self._Rectangle_width == 0 or self._Rectangle_height == 0:
             return ""
-        return "\n".join(str(self.print_symbol) * self._Rectangle_width
-                                for j in range(self._Rectangle_height))
+        return "\n".join(str(self.print_symbol) * self._Rectangle_width for j in range(self._Rectangle_height))
 
     def __repr__(self):
         """return a string representation of the rectangle to be able to recreate a new instance"""

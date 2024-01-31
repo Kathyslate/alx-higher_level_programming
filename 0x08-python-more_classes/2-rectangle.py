@@ -4,7 +4,6 @@ Defining a class Rectangle
 """
 
 
-
 class Rectangle:
     """representing a rectangle"""
     def __init__(self, width=0, height=0):
@@ -49,4 +48,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self._Rectangle_height = value
-

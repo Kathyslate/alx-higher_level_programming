@@ -4,7 +4,6 @@ Defining a class Rectangle
 """
 
 
-
 class Rectangle:
     """representing a rectangle"""
     def __init__(self, width=0, height=0):
@@ -55,4 +54,3 @@ class Rectangle:
         if self._Rectangle_width == 0 or self._Rectangle_height == 0:
             return ""
         return "\n".join(["#" * self._Rectangle_width] * self._Rectangle_height)
-

@@ -4,7 +4,6 @@ Defining a class Rectangle
 """
 
 
-
 class Rectangle:
     """representing a rectangle"""
 
@@ -59,8 +58,7 @@ class Rectangle:
         """print the rectangle with the character #"""
         if self._Rectangle_width == 0 or self._Rectangle_height == 0:
             return ""
-        return "\n".join(str(self.print_symbol) * self._Rectangle_width
-                                for j in range(self._Rectangle_height))
+        return "\n".join(str(self.print_symbol) * self._Rectangle_width for j in range(self._Rectangle_height))
 
     def __repr__(self):
         """return a string representation of the rectangle to be able to recreate a new instance"""
