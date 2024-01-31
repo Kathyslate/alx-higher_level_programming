@@ -15,5 +15,5 @@ class LockedClass:
     __slots__ = ["first_name"]
 
     def __init__(self):
-         """initiates instances for locked class"""
-         self.first_name = "first_name"
+        """initiates instances for locked class"""
+        self.first_name = "first_name"
