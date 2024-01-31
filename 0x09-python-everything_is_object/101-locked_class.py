@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a class LockedClass"""
 
+
 class LockedClass:
     """
     A class LockedClass with no class or object attribute,
@@ -12,6 +13,7 @@ class LockedClass:
     """
 
     __slots__ = ["first_name"]
+
     def __init__(self):
     """initiates instances for locked class"""
          self.first_name = "first_name"
