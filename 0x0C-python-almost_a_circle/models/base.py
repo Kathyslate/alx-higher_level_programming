@@ -5,7 +5,6 @@
 import json
 import csv
 import os.path
-import turtle
 
 
 class Base:
@@ -28,7 +27,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-         """Returns the JSON string representation of list_dictionaries.
+        """Returns the JSON string representation of list_dictionaries.
 
         Args:
             list_dictionaries (list): list of dictionaries.
