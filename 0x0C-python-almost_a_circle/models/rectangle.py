@@ -75,11 +75,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """x retriever.
-
-        Returns:
-            int: x.
-        """
+        """x retriever"""
         return self.__x
 
     @x.setter
