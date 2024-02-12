@@ -63,9 +63,6 @@ class Rectangle(Base):
     def height(self, value):
         """Property setter for height of rectangle.
 
-        Args:
-            value (int): height of rectangle.
-
         Raises:
             TypeError: if height is not an integer.
             ValueError: if height is less than or equal to zero.
