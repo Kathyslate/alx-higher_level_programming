@@ -8,7 +8,7 @@ import os.path
 
 
 class Base:
-    """ Class Base 
+    """ Class Base
         private class attribute __nb_objects = 0
     """
     __nb_objects = 0
