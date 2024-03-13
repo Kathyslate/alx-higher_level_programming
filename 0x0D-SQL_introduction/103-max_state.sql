@@ -1,3 +1,5 @@
--- removes all scores below 5 from second_table
-DELETE FROM second_table
-WHERE score <= 5;
+-- displays average temp by city in descending order
+SELECT state, MAX(value) AS max_temp
+FROM temperatures
+GROUP BY state
+ORDER BY max_temp DESC;
