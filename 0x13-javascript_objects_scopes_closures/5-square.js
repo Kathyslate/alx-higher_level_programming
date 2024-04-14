@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// class `Rectangle` input filter; print, rotate, and double methods
+// class `Square` which inherits from `Rectangle` but only takes one arg
 class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
@@ -24,4 +24,10 @@ class Rectangle {
   }
 }
 
-module.exports = Rectangle;
+class Square extends Rectangle {
+  constructor (size) {
+    super(size, size);
+  }
+}
+
+module.exports = Square;
