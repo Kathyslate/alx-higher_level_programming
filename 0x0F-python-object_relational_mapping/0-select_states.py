@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 import MySQLdb
+from sys import argv
 
-def list_states(username, password, db_name):
-    db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=db_name)
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM hbtn_0e_0_usa ORDER BY id ASC")
-    results = cursor.fetchall()
-    for row in results:
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3], charset="utf8")
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
+    for row in rows:
         print(row)
-    cursor.close()
+    cur.close()
     db.close()
-list_states('your_username', 'your_password', 'hbtn_0e_0_usa')
